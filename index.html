@@ -27,9 +27,136 @@
             .recommendation { padding: 10px; margin: 5px 0; border-left: 3px solid #58a6ff; }
             .risk-badge { font-size: 20px; margin-right: 10px; }
             code { background: #0d1117; padding: 2px 6px; border-radius: 3px; font-family: 'Courier New'; color: #79c0ff; }
+        
+.navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    backdrop-filter: blur(14px);
+    background: rgba(22, 27, 34, 0.6);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+}
+
+.logo {
+    font-weight: bold;
+    color: #58a6ff;
+    font-size: 18px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #c9d1d9;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: 0.25s;
+}
+
+.nav-links a:hover {
+    background: rgba(255,255,255,0.08);
+}
+
+/* Dropdown */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 42px;
+    left: 0;
+    background: rgba(13, 17, 23, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    min-width: 200px;
+    padding: 8px 0;
+}
+
+.dropdown-menu li {
+    list-style: none;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 15px;
+}
+
+.dropdown-menu a:hover {
+    background: rgba(255,255,255,0.06);
+}
+
+/* Hover trigger */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+
+
+/* FIX DROPDOWN POSITIONING */
+.dropdown {
+    position: relative;
+}
+
+/* Make dropdown stick to parent with no gap */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;   /* was 42px → causes gap */
+    left: 0;
+    margin-top: 0; /* ensure no spacing */
+    background: rgba(13, 17, 23, 0.95);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    min-width: 200px;
+    padding: 8px 0;
+}
+
+/* Keep it visible when hovering either parent OR menu */
+.dropdown:hover .dropdown-menu,
+.dropdown-menu:hover {
+    display: block;
+}
         </style>
     </head>
     <body>
+      
+<nav class="navbar">
+    <div class="nav-container">
+        <span class="logo">Reports</span>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li class="dropdown">
+                <a href="#">More Reports ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Rate Limit Report</a></li>
+                    <li><a href="tools.html">WAF Report</a></li>
+                    <li><a href="tools.html">SIEM Report</a></li>
+                    <li><a href="#">Network Security</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
         <div class="container">
             <h1>🔒 Rate Limit Bypass Test Report</h1>
             
