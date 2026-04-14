@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WAF & SIEM Overview</title>
+<style>
+    body {
+        background-color: #0f172a;
+        color: #e2e8f0;
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        line-height: 1.6;
+    }
+    h1, h2 {
+        color: #38bdf8;
+    }
+    .card {
+        background: #1e293b;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+    }
+    table, th, td {
+        border: 1px solid #334155;
+    }
+    th {
+        background-color: #334155;
+    }
+    th, td {
+        padding: 10px;
+        text-align: left;
+    }
+    dl dt {
+        font-weight: bold;
+        color: #22c55e;
+    }
+    dl dd {
+        margin-bottom: 10px;
+    }
+    input, select {
+        background: #020617;
+        color: #e2e8f0;
+        border: 1px solid #334155;
+        padding: 5px;
+        border-radius: 5px;
+    }
+</style>
+</head>
+<body>
+
+<div class="card">
+    <h1>Web Application Firewall (WAF)</h1>
+    <p>
+        A Web Application Firewall (WAF) is a Layer 7 security solution that filters, monitors, and blocks HTTP/HTTPS traffic to and from web applications. Acting as a shield, it protects against vulnerabilities like SQL injection, cross-site scripting (XSS), and OWASP Top 10 threats, often serving as a key compliance requirement for PCI DSS.
+    </p>
+
+    <h2>Key WAF Security Capabilities & Types</h2>
+    <dl>
+        <dt>Protection Mechanism</dt>
+        <dd>WAFs act as a reverse proxy, inspecting incoming user traffic to protect the server from malicious requests.</dd>
+
+        <dt>Detection Methods</dt>
+        <dd>Uses signature-based detection, anomaly-based detection, and machine learning for emerging threats.</dd>
+    </dl>
+
+    <table>
+        <tr>
+            <th>Deployment Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>Cloud-based</td>
+            <td>Easy setup, scalable, managed security</td>
+        </tr>
+        <tr>
+            <td>On-premises</td>
+            <td>Full control within private network</td>
+        </tr>
+        <tr>
+            <td>Hybrid</td>
+            <td>Combination of cloud and on-prem for flexibility</td>
+        </tr>
+    </table>
+
+    <h2>Primary Benefits</h2>
+    <ul>
+        <li>OWASP Top 10 Defense</li>
+        <li>Zero-Day Threat Mitigation</li>
+        <li>Bot Management</li>
+    </ul>
+
+    <h2>Security Limitations</h2>
+    <ul>
+        <li>No Application Logic Visibility</li>
+        <li>Requires regular tuning and maintenance</li>
+    </ul>
+</div>
+
+<div class="card">
+    <h1>Security Information and Event Management (SIEM)</h1>
+    <p>
+        Security Information and Event Management (SIEM) is a cybersecurity solution that provides real-time monitoring, analysis, and logging of security data across an organization's network. It aggregates data to detect threats, facilitate investigations, and ensure compliance.
+    </p>
+
+    <h2>Key Features</h2>
+    <dl>
+        <dt>Log Management</dt>
+        <dd>Centralized collection and storage of logs</dd>
+
+        <dt>Correlation & Analytics</dt>
+        <dd>Analyzes patterns such as failed logins or unusual activity</dd>
+
+        <dt>Threat Detection</dt>
+        <dd>Uses AI, ML, and threat intelligence</dd>
+
+        <dt>Incident Response</dt>
+        <dd>Dashboards and alerts for SOC teams</dd>
+    </dl>
+
+    <h2>Benefits</h2>
+    <ul>
+        <li>Improved visibility</li>
+        <li>Faster incident response</li>
+        <li>Compliance support</li>
+        <li>UEBA integration</li>
+    </ul>
+
+    <h2>Common SIEM Solutions</h2>
+    <table>
+        <tr>
+            <th>Solution</th>
+        </tr>
+        <tr><td>Splunk Enterprise Security</td></tr>
+        <tr><td>IBM QRadar SIEM</td></tr>
+        <tr><td>Google Chronicle Security Operations</td></tr>
+        <tr><td>Palo Alto Cortex XSIAM</td></tr>
+        <tr><td>Microsoft Sentinel</td></tr>
+    </table>
+
+    <h2>Challenges</h2>
+    <ul>
+        <li>High costs</li>
+        <li>Alert overload</li>
+        <li>Requires skilled personnel</li>
+    </ul>
+</div>
+
+<div class="card">
+    <h2>Quick Selector</h2>
+    <label for="tools">Choose Tool Type:</label>
+    <input list="tool-list" id="tools" name="tools">
+    <datalist id="tool-list">
+        <option value="WAF">
+        <option value="SIEM">
+    </datalist>
+</div>
+
+</body>
+</html>
